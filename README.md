@@ -1,0 +1,2 @@
+# Cytokines_Project
+Study the interaction of drugs with cytokine proteins. Search of a classification model that can predict the value of a biological activity of a molecule from the absolute average value of the same activity against cytokines. The database was obtained from Chembl website. The initial values of STANDARD_VALUE column (values of activities described in STANDARD_TYPE (UNITS)j) will be transformed into a z-score using the average values of each type of activity.
