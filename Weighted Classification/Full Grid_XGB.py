@@ -27,12 +27,12 @@ test_df = pd.read_csv(path + "/test.csv")
 
 # Drop label from X_train and X_test subsets
 
-X_train = train_df.drop(['Lij'], axis=1)
-y_train = train_df['Lij']
-X_test = test_df.drop(['Lij'], axis=1)
-y_test = test_df['Lij']
+X_train = train_df.drop(['class'], axis=1)
+y_train = train_df['class']
+X_test = test_df.drop(['class'], axis=1)
+y_test = test_df['class']
 
-# In[GridseacrchCV] 
+# GRID SEARCH CV FOR BINARY CLASSIFICATION
 
 # To write output
 import sys
@@ -48,7 +48,7 @@ n = 4 # number of available cores
 
 optimized_XGB = XGBClassifier()
 # change number of threads number of cores available
-parameters = {'nthread':[4], #when use hyperthread, xgboost may become slower
+parameters = {'nthread':[n], #when use hyperthread, xgboost may become slower
               'objective':['binary:logistic'],
               'gamma': [0.1],
               'learning_rate': [0.05], #so called `eta` value
